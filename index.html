@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RevoU Mini Coding Project</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+    
+</head>
+<body>
+    <header>
+        <div class="navbar"> 
+            <h1 class="title"> Welcome to Katik</h1>
+            <p class="subtitle">Hello Guys, Welcome to Katik :] <br> A simple web app that functions to calculate area and perimeter values ​​of flat shapes  </p>
+            <nav>
+                <div class="menu">
+                    <a href="" class="menu-triangle">Segitiga</a>
+                    <a href="" class="menu-parallelogram">Jajargenjang</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!-- ini form untuk segitiga -->
+        <section id="triangle">
+            <!-- ini untuk luas segitiga -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Luas Segitiga</h2>
+                </div>
+                <div class="card-body">
+                    <img src="assets/segitiga.png" alt="Segitiga">
+                    <div>
+                        <p>Rumus Luas Segitiga yaitu:</p>
+                        <h4 class="triangle-area-formula">L = 1/2 x a x t</h4>
+                        <p>Dimana: </p>
+                        <p>L = Luas </p>
+                        <p> a = Panjang Alas </p>
+                        <p>t = Tinggi </p>
+                        <br>
+                    </div>
+                    <br> <hr>
+                    <div class="card-form">
+                        <h1>Hitung Luas Segitiga</h1>
+                        <form class="form-triangle" id="form-area-triangle" onsubmit="hitungLuasSegitiga(event)">
+                            <input type="number" name="alas-segitiga" id="alas-segitiga" placeholder="Masukkan Alas Segitiga" required pattern="[0-9]+">
+                            <input type="number" name="tinggi-segitiga" id="tinggi-segitiga" placeholder="Masukkan Tinggi Segitiga" required pattern="[0-9]+">
+                            <div class="result">
+                                <p id="show-triangle-area-formula"></p>
+                                <p id="show-triangle-area-count"></p>
+                                <p id="show-triangle-area-result"></p>
+                            </div>
+                            <button class="hitung" type="submit">Hitung</button>
+                        </form>
+                        <div class="reset">
+                            <input type="button" value="Reset" onclick="resetLuasSegitiga()">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+                <!-- ini untuk keliling segitiga -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Keliling Segitiga</h2>
+                </div>
+                <div class="card-body">
+                    <img src="assets/segitiga.png" alt="Segitiga">
+                    <div>
+                        <p>Rumus Keliling Segitiga yaitu:</p>
+                        <h4 class="triangle-perimeter-formula">K = S1 + S2 + a</h4>
+                        <p>Dimana: </p>
+                        <p>K = Keliling </p>
+                        <p> a = Panjang Alas </p>
+                        <p>S1 = Panjang sisi 1 </p>
+                        <p>S2 = Panjang sisi 2 </p>
+                    </div>
+                    <br> <hr>
+                    <div class="card-form">
+                        <h1>Hitung Keliling Segitiga</h1>
+                        <form class="form-triangle" id="form-perimeter-triangle" onsubmit="hitungKelilingSegitiga(event)">
+                            <input type="number" name="alas-segitiga" id="alas-keliling-segitiga" placeholder="Masukkan Alas Segitiga" required pattern="[0-9]+">
+                            <input type="number" name="sisi1-segitiga" id="sisi1-segitiga" placeholder="Masukkan Sisi 1 Segitiga" required pattern="[0-9]+">
+                            <input type="number" name="sisi2-segitiga" id="sisi2-segitiga" placeholder="Masukkan Sisi 2 Segitiga" required pattern="[0-9]+">
+                            <div class="result">
+                                <p id="show-triangle-perimeter-formula"></p>
+                                <p id="show-triangle-perimeter-count"></p>
+                                <p id="show-triangle-perimeter-result"></p>
+                            </div>
+                            <button class="hitung" type="submit">Hitung</button>
+                        </form>
+                        <div class="reset">
+                            <input type="button" value="Reset" onclick="resetKelilingSegitiga()">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ini form untuk jajargenjang -->
+        <section id="parallelogram">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Luas Jajargenjang</h2>
+                </div>
+                <div class="card-body">
+                    <img src="assets/jajargenjang.png" alt="Jajargenjang">
+                    <div>
+                        <p>Rumus Luas Jajargenjang yaitu:</p>
+                        <h4 class="parallelogram-area-formula">L = a x t</h4>
+                        <p>Dimana: </p>
+                        <p>L = Luas </p>
+                        <p> a = Panjang Alas </p>
+                        <p>t = Tinggi </p>
+                    </div>
+                    <br> <hr>
+                    <div class="card-form">
+                        <h1>Hitung Luas Jajargenjang</h1>
+                        <form class="form-parallelogram" id="form-area-parallelogram" onsubmit="hitungLuasJajargenjang(event)">
+                            <input type="number" name="alas-jajargenjang" id="alas-jajargenjang" placeholder="Masukkan Alas Jajargenjang" required pattern="[0-9]+">
+                            <input type="number" name="tinggi-jajargenjang" id="tinggi-jajargenjang" placeholder="Masukkan Tinggi Jajargenjang" required pattern="[0-9]+">
+                            <div class="result">
+                                <p id="show-parallelogram-area-formula"></p>
+                                <p id="show-parallelogram-area-count"></p>
+                                <p id="show-parallelogram-area-result"></p>
+                            </div>
+                            <button class="hitung" type="submit">Hitung</button>
+                        </form>
+                        <div class="reset">
+                            <input type="button" value="Reset" onclick="resetLuasJajargenjang()">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Keliling Jajargenjang</h2>
+                </div>
+                <div class="card-body">
+                    <img src="assets/jajargenjang.png" alt="Jajargenjang">
+                    <div>
+                        <p>Rumus Keliling Jajargenjang yaitu:</p>
+                        <h4 class="parallelogram-perimeter-formula">K = 2 x (a + b)</h4>
+                        <p>Dimana: </p>
+                        <p>K = Keliling </p>
+                        <p> a = Panjang Alas </p>
+                        <p>b = Panjang sisi b </p>
+                        
+                    </div>
+                    <br> <hr>
+                    <div class="card-form">
+                        <h1>Hitung Keliling Jajargenjang</h1>
+                        <form class="form-parallelogram" id="form-perimeter-parallelogram" onsubmit="hitungKelilingJajargenjang(event)">
+                            <input type="number" name="alas-jajargenjang" id="alas-keliling-jajargenjang" placeholder="Masukkan Alas Jajargenjang" required pattern="[0-9]+">
+                            <input type="number" name="sisib-jajargenjang" id="sisib-jajargenjang" placeholder="Masukkan Sisi b Jajargenjang" required pattern="[0-9]+">
+                           
+                            <div class="result">
+                                <p id="show-parallelogram-perimeter-formula"></p>
+                                <p id="show-parallelogram-perimeter-count"></p>
+                                <p id="show-parallelogram-perimeter-result"></p>
+                            </div>
+                            <button class="hitung" type="submit">Hitung</button>
+                        </form>
+                        <div class="reset">
+                            <input type="button" value="Reset" onclick="resetKelilingJajargenjang()">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+</body>
+</html>
